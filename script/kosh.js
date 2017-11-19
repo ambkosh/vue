@@ -15,9 +15,9 @@ Vue.component('vmenu', {
         activeColor: function (activeValue) {
             activeValue.isActive = !activeValue.isActive;
             activeMenuItem = activeValue.text;
-            this.$emit('colorChange');
-            console.log(activeMenuItem);
-        }
+            this.$emit('colorchange');
+/*             console.log(activeMenuItem);
+ */        }
     }
 })
 
@@ -25,11 +25,12 @@ Vue.component('vmenu', {
 new Vue ({
     el: '#stats',
     data: {
-        activeMenuItem: ''
+        activeMenu: "test"
     },
     methods: {
-        activeColor: function () {
-            console.log(this)
+        printMenu: function () {
+            console.log(activeMenuItem);
+            this.activeMenu = activeMenuItem;
         }
     }
 })
