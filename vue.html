@@ -16,6 +16,7 @@
 <div id="stats">    
 
     <vmenu v-on:colorchange="printMenu"></vmenu>
+    <vcontent v-bind:menutochild="parentMenuItem"></vcontent>
     <p>Activemenu is: {{ activeMenu }}</p>
 
 </div>

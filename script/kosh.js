@@ -26,11 +26,23 @@ Vue.component('vmenu', {
 })
 
 
+//not working. for some reason when parentMenuItem is updated in the parent, it does not get updated to this child. sucks
+Vue.component('vcontent', {
+    props: ['menutochild'],
+    template: '<div><p> Parentitem: {{ menutochild }} </p></div>',
+    data: function () {
+        return {
+            parentMenuItem: 'test'
+        }
+    }
+})
+
+
 new Vue ({
     el: '#stats',
     data: {
         activeMenu: "Currently none selected",
-        parentMenuItem: ''
+        parentMenuItem: 'default'
     },
     methods: {
         printMenu: function () {
