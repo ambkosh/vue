@@ -5,30 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://vuejs.org/js/vue.js"></script>
-    <title>/r/de stats</title>
+    <link href="/css/style.css" rel="stylesheet">        
+    <title>r/de stats</title>
 </head>
 <body>
-    
-    <div id="app">
-        {{ message }}
 
-        <p>
-            <menu-item 
-                v-for="item in menu"
-                v-bind:menu="item"
-                v-bind:key="item.id">
-            </menu-item>
-        </p>
 
-        <p v-html="rawHTML">
-            
-        </p>
 
-    <button v-on:click="reverseMessage">Reverse Message</button>
-    <input v-model="message">
-    </div>
+<div id="stats">    
 
-    <script src="/script/kosh.js"></script>
+    <vmenu v-on:colorChange="activeColor"></vmenu>
+    <p>Activemenu is: {{ activeMenuItem }}</p>
+
+</div>
+
+<script src="/script/vue2.js"></script>
     
 </body>
 </html>
